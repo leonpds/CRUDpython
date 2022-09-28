@@ -1,17 +1,20 @@
 if __name__ == '__main__':
+
     pessoa = dict()
     galera = list()
     menu = 0
 
+
     while menu != 5:
 
-        print('==== MENU PRINCIPAL====')
-        print('#    [1] CADASTRAR    #')
-        print('X    [2] LISTAR       X')
-        print('#    [3] EDITAR       #')
-        print('X    [4] EXCLUIR      X')
-        print('#    [5] SAIR         #')
-        print('=======================')
+
+        print('**** MENU PRINCIPAL****')
+        print('*    [1] CADASTRAR    *')
+        print('*    [2] LISTAR       *')
+        print('*    [3] EDITAR       *')
+        print('*    [4] EXCLUIR      *')
+        print('*    [5] SAIR         *')
+        print('***********************')
 
         menu = int(input('Escolha uma opção:'))
 
@@ -53,6 +56,8 @@ if __name__ == '__main__':
             delete = int(input('Que cadastro você deseja deletar (informe o ID):'))
             galera.pop(delete)
             print('Cadastro deletado!')
+            print(galera)
 
         elif menu == 5:
             print('Finalizado.')
+            break
