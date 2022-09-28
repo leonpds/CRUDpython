@@ -38,7 +38,8 @@ if __name__ == '__main__':
             idade = str(input('Idade:'))
             turma = str(input('Turma:'))
 
-            galera[modificar].update({'nome': nome, 'idade': idade, 'turma': turma})
+
+            galera[modificar].update({'Nome': nome, 'Idade': idade, 'Turma': turma})
             print('Cadastro alterado!')
             for i in enumerate(galera):
                 print(i)
