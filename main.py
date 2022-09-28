@@ -22,6 +22,16 @@ if __name__ == '__main__':
             pessoa['Turma'] = str(input('Turma:'))
             galera.append(pessoa.copy())
             print('Cadastro efetuado!')
+            while True:
+                resp = str(input('Gostaria de cadastrar uma nova pessoa? [1- Sim/2- Não]: '))
+                if resp in '1':
+                    pessoa['Nome'] = str(input('Nome:'))
+                    pessoa['Idade'] = str(input('Idade:'))
+                    pessoa['Turma'] = str(input('Turma:'))
+                    galera.append(pessoa.copy())
+                    print('Cadastro efetuado!')
+                else:
+                    break
 
         elif menu == 2:
             for i in enumerate(galera):
@@ -40,9 +50,9 @@ if __name__ == '__main__':
                 print(i)
 
         elif menu == 4:
-            delete = int(input('Quem você deseja deletar (informe o ID):'))
+            delete = int(input('Que cadastro você deseja deletar (informe o ID):'))
             galera.pop(delete)
-            print('Aluno deletado!')
+            print('Cadastro deletado!')
 
         elif menu == 5:
             print('Finalizado.')
