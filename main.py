@@ -1,10 +1,7 @@
-
-
 if __name__ == '__main__':
     pessoa = dict()
     galera = list()
     menu = 0
-
 
     while menu != 5:
 
@@ -30,7 +27,6 @@ if __name__ == '__main__':
             for i in enumerate(galera):
                 print(i)
 
-
         elif menu == 3:
             modificar = int(input('Informe o ID:'))
 
@@ -38,13 +34,10 @@ if __name__ == '__main__':
             idade = str(input('Idade:'))
             turma = str(input('Turma:'))
 
-
             galera[modificar].update({'Nome': nome, 'Idade': idade, 'Turma': turma})
             print('Cadastro alterado!')
             for i in enumerate(galera):
                 print(i)
-
-
 
         elif menu == 4:
             delete = int(input('Quem você deseja deletar (informe o ID):'))
