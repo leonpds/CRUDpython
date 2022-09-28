@@ -1,34 +1,54 @@
-def menu_principal():
-    print('**####### MENU ######**')
-    print('* [1] CADASTRAR ')
-    print('* [2] LISTAR ')
-    print('* [3] REMOVER ')
-    print('* [4] ATUALIZAR ')
-    print('* [5] FECHAR ')
-    print('########################')
 
-menu_principal()
 
-Escolha_opcao = input("Escolha a opção desejada: ")
-
-if Escolha_opcao == "1":
-
-    galera = list()
+if __name__ == '__main__':
     pessoa = dict()
-    while True:
-        pessoa.clear()
-        pessoa['ID'] = str(input('ID: '))
-        pessoa['Nome'] = str(input('Nome: '))
-        pessoa['Idade'] = str(input('Idade: '))
-        pessoa['RG'] = str(input('RG: '))
-        galera.append(pessoa.copy())
-        while True:
-            resp = str(input('Gostaria de cadastrar uma nova pessoa? [1- Sim/2- Não]: '))
-            if resp in '12':
-                break
-            print('ERRO! Informe a operação certa!')
-        if resp == '1':
-            break
-    print('-=' * 30)
-    print(galera)
+    galera = list()
+    menu = 0
 
+
+    while menu != 5:
+
+        print('==== MENU PRINCIPAL====')
+        print('#    [1] CADASTRAR    #')
+        print('X    [2] LISTAR       X')
+        print('#    [3] EDITAR       #')
+        print('X    [4] EXCLUIR      X')
+        print('#    [5] SAIR         #')
+        print('=======================')
+
+        menu = int(input('Escolha uma opção:'))
+
+        if menu == 1:
+
+            pessoa['Nome'] = str(input('Nome:'))
+            pessoa['Idade'] = str(input('Idade:'))
+            pessoa['Turma'] = str(input('Turma:'))
+            galera.append(pessoa.copy())
+            print('Cadastro efetuado!')
+
+        elif menu == 2:
+            for i in enumerate(galera):
+                print(i)
+
+
+        elif menu == 3:
+            modificar = int(input('Informe o ID:'))
+
+            nome = str(input('Nome:'))
+            idade = str(input('Idade:'))
+            turma = str(input('Turma:'))
+
+            galera[modificar].update({'nome': nome, 'idade': idade, 'turma': turma})
+            print('Cadastro alterado!')
+            for i in enumerate(galera):
+                print(i)
+
+
+
+        elif menu == 4:
+            delete = int(input('Quem você deseja deletar (informe o ID):'))
+            galera.pop(delete)
+            print('Aluno deletado!')
+
+        elif menu == 5:
+            print('Finalizado.')
